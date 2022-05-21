@@ -1,0 +1,56 @@
+[
+  {
+    "_id": 1,
+    "name": "Striking tools",
+    "price": 100,
+    "minimum": 200,
+    "maximum": 1000,
+    "description": "The Nail Hammer that we provide to our customers is widely appreciated for its fine surface finish, easy gripping, superior durability and excellent strength. ",
+    "img": "https://tiimg.tistatic.com/new_website1/micro_cate_images/2/b/30/50630-w124-h124.jpg"
+  },
+  {
+    "_id": 2,
+    "name": "Spindle tools",
+    "price": 120,
+    "minimum": 200,
+    "maximum": 1000,
+    "description": "With profound industry experience, we are able to manufacture and supply a commendable range of Friction Spindle. ",
+    "img": "https://tiimg.tistatic.com/new_website1/micro_cate_images/2/b/19/194419-w124-h124.jpg"
+  },
+  {
+    "_id": 3,
+    "name": "Extruder Screw",
+    "price": 150,
+    "minimum": 200,
+    "maximum": 1000,
+    "description": "Incorporated in the year , we have been betrothed in manufacturing, exporting and supplying supreme grade array of Extruder Parallel Twin Screw & Barrel .",
+    "img": "https://tiimg.tistatic.com/new_website1/micro_cate_images/2/b/84/207584-w124-h124.jpg"
+  },
+  {
+    "_id": 4,
+    "name": "Drill Drift",
+    "price": 120,
+    "minimum": 200,
+    "maximum": 1000,
+    "description": " Drill Drift Dth Bits Dth Hammer Drilling Equipments Hydraulic Rock Drill Hammers Drifter Bits",
+    "img": "https://tiimg.tistatic.com/new_website1/micro_cate_images/2/b/09/75209-w124-h124.jpg"
+  },
+  {
+    "_id": 5,
+    "name": "Drilling Rag",
+    "price": 160,
+    "minimum": 200,
+    "maximum": 1000,
+    "description": " We are offering a wide range of Samples. These Samples are made from very high quality raw material which ensures high durability at its user end.",
+    "img": "https://tiimg.tistatic.com/new_website1/micro_cate_images/2/b/22/142322-w124-h124.jpg"
+  },
+  {
+    "_id": 6,
+    "name": "Rolling Mill",
+    "price": 150,
+    "minimum": 200,
+    "maximum": 1000,
+    "description": "Cold Rolling Spares With the support of our proficient workforce, we are regarded as one of the most prominent manufacturers and suppliers of Cold Rolling Spares .",
+    "img": "https://tiimg.tistatic.com/new_website1/micro_cate_images/2/b/94/88694-w124-h124.jpg"
+  }
+]
