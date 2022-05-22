@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <section style={{
       background: `url(${contact})`
-    }} className='justify-center mt-16'>
+    }} className='justify-center mt-16 py-10'>
       <div className='text-center'>
         <h1 className='text-primary font-bold text-xl mt-10'>Contact Us</h1>
         <h2 className='text-white text-3xl'>Stay connected with us</h2>
