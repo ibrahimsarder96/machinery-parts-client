@@ -1,47 +1,76 @@
 import React from 'react';
-import {useSignInWithEmailAndPassword, useSignInWithGoogle} from 'react-firebase-hooks/auth'
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useForm } from 'react-hook-form';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
-import { Link } from 'react-router-dom';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 
 
-
-
-const Login = () => {
+const SignUP = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
   const [
-    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
     user,
     loading,
     error,
-  ] = useSignInWithEmailAndPassword(auth);
+  ] = useCreateUserWithEmailAndPassword(auth);
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  // const [token] = useToken(user || gUser);
 
+  const navigate = useNavigate();
 
-  if(loading || gLoading){
+  if(loading || gLoading || updating){
     return <Loading></Loading>
   }
+
   let signInError;
-  if(error || gError){
-    signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+  if(error || gError || updateError){
+    signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
   }
-  if(gUser || user){
-    console.log(gUser)
+  // if(token){
+  //   navigate('/appointment')
+  // }
+  if(user || gUser){
+    navigate('/')
   }
 
-  const onSubmit = data => {
+  const onSubmit = async(data) => {
     console.log(data);
-    signInWithEmailAndPassword(data.email, data.password)
+  await  createUserWithEmailAndPassword(data.email, data.password )
+  await updateProfile({ displayName: data.name });
+  console.log(updateProfile)
+  navigate('/')
+ 
   }
-
   return (
-    <div className='card flex h-screen justify-center items-center'>
-      <div className="card w-100  shadow-2xl">
-        <div className="card-body">
-         <h2 className="text-3xl text-accent text-center font-bold">Login</h2>
+    <div className="card  h-screen justify-center items-center">
+    <div className='card w-100 bg-white shadow-2xl'>
+    <div className="card-body">
+    <h2 className="text-center text-accent text-2xl font-bold">Sign UP</h2>
 
-         <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
+    <div className="form-control w-full max-w-xs">
+      <label className="label">
+        <span className="label-text text-black text-xl">Name</span>
+      </label>
+      <input 
+      type="text" 
+      placeholder="Name" 
+      className="input input-bordered w-full max-w-xs border-accent text-white text-xl" 
+      {...register("name", {
+        required: {
+          value: true,
+          message: 'Name is Required'
+        }
+      }
+      )}
+      />
+      <label className="label">
+      {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+      </label>
+    </div>
     <div className="form-control w-full max-w-xs">
       <label className="label">
         <span className="label-text text-black text-xl">Email</span>
@@ -93,18 +122,18 @@ const Login = () => {
       </label>
     </div>    
     {signInError}
-      <input className='btn w-full max-w-xs bg-black text-white font-bold' type="submit" value="Login" />
+      <input className='btn w-full max-w-xs bg-black text-white font-bold' type="submit" value="Signup" />
     </form>
-    <p className='text-black'>New Machinery Tools? <Link to="/signup" className='text-accent'>Create New Account</Link></p>
-        <div className="divider text-black">OR</div>
-        <button 
+    <p className='text-black'>Already have an account? <Link to="/login" className='text-accent'>Please Login</Link></p>
+    <div className="divider text-black text-xl">OR</div>
+    <button 
     className="btn btn-outline uppercase text-xl border-accent text-accent"
     onClick={() => signInWithGoogle()}
     >Continue with Google</button>
-      </div>
     </div>
     </div>
+  </div>
   );
 };
 
-export default Login;
+export default SignUP;
