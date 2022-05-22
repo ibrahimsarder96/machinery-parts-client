@@ -11,8 +11,8 @@ const BussSum = () => {
       <div className='grid grid-cols-1 lg:grid-cols-4 mt-8'>
         <div className='flex justify-center items-center my-3'>
          <div>
-         <div class="avatar">
-            <div class="w-24 mask mask-squircle">
+         <div className="avatar">
+            <div className="w-24 mask mask-squircle">
               <img src={countries} alt=""/>
             </div>
           </div>
@@ -22,8 +22,8 @@ const BussSum = () => {
         </div>
         <div className='flex justify-center items-center'>
          <div>
-         <div class="avatar">
-            <div class="w-24 mask mask-squircle">
+         <div className="avatar">
+            <div className="w-24 mask mask-squircle">
               <img src={project} alt=""/>
             </div>
           </div>
@@ -33,8 +33,8 @@ const BussSum = () => {
         </div>
         <div className='flex justify-center items-center'>
          <div>
-         <div class="avatar">
-            <div class="w-24 mask mask-squircle">
+         <div className="avatar">
+            <div className="w-24 mask mask-squircle">
               <img src={client} alt=""/>
             </div>
           </div>
@@ -44,8 +44,8 @@ const BussSum = () => {
         </div>
         <div className='flex justify-center items-center'>
          <div>
-         <div class="avatar">
-            <div class="w-24 mask mask-squircle">
+         <div className="avatar">
+            <div className="w-24 mask mask-squircle">
               <img src={feedback} alt=""/>
             </div>
           </div>

@@ -4,31 +4,31 @@ import payment from '../../assets/payments.png'
 const Footer = () => {
   return (
   <div>
-      <footer class="footer p-10 bg-white text-black mt-8 ">
+      <footer className="footer p-10 bg-white text-black mt-8 ">
     <div>
-      <span class="footer-title">CUSTOMER SERVICES</span> 
-      <a class="link link-hover">Privacy Policy</a> 
-      <a class="link link-hover">Terms & Conditions</a> 
-      <a class="link link-hover">Return/ Refund Policy</a> 
-      <a class="link link-hover">Delivery Terms</a>
+      <span className="footer-title">CUSTOMER SERVICES</span> 
+      <a className="link link-hover">Privacy Policy</a> 
+      <a className="link link-hover">Terms & Conditions</a> 
+      <a className="link link-hover">Return/ Refund Policy</a> 
+      <a className="link link-hover">Delivery Terms</a>
     </div> 
     <div>
-      <span class="footer-title">Services</span> 
-      <a class="link link-hover">Shop</a> 
-      <a class="link link-hover">Cart</a> 
-      <a class="link link-hover">My Account</a> 
-      <a class="link link-hover">About</a> 
-      <a class="link link-hover">Contact Us</a>
+      <span className="footer-title">Services</span> 
+      <a className="link link-hover">Shop</a> 
+      <a className="link link-hover">Cart</a> 
+      <a className="link link-hover">My Account</a> 
+      <a className="link link-hover">About</a> 
+      <a className="link link-hover">Contact Us</a>
     </div> 
     <div>
-      <span class="footer-title">Company</span> 
-      <a class="link link-hover">Home</a> 
-      <a class="link link-hover">Blog & Articles</a> 
-      <a class="link link-hover">Customer Review</a>
+      <span className="footer-title">Company</span> 
+      <a className="link link-hover">Home</a> 
+      <a className="link link-hover">Blog & Articles</a> 
+      <a className="link link-hover">Customer Review</a>
     </div> 
     <div>
-      <span class="footer-title">Our Payment Option</span> 
-      <div class="form-control w-80">
+      <span className="footer-title">Our Payment Option</span> 
+      <div className="form-control w-80">
         <img src={payment} alt="" />
       </div>
     </div>

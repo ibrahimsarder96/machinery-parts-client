@@ -1,9 +1,11 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 const Purchase = () => {
+  const {productId} = useParams();
   return (
-    <div>
-      <h1>Hello Purchase</h1>
+    <div className='bg-white'>
+      <h1 className='text-black text-4xl'>Hello Purchase: {productId}</h1>
     </div>
   );
 };
