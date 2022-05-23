@@ -1,24 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useProducts from '../../hooks/useProducts';
 import Loading from '../Shared/Loading';
+import { toast} from 'react-toastify';
+
 
 const Purchase = () => {
   const {productId} = useParams();
   const [product] = useProducts(productId);
+  const [quantity, setQuantity] = useState()
 
   const [user, loading, error] = useAuthState(auth);
   if(loading){
     return <Loading></Loading>
   }
   const handleOrder = event => {
-    event.preventDefault()
-    const phone = event.target.phone.value;
-    const address = event.target.address.value;
-    const order = event.target.order.value;
-    console.log(phone, address, order)
+    event.preventDefault();
+    if(event.target.quantity.value > 200 && event.target.quantity.value < 1000){
+      setQuantity(event.target.quantity.value);
+    }
+    else{
+      return alert(`please, min order ${product.minimum} and max ${product.maximum}`)
+    }
+    console.log(quantity)
+    const order = {
+      productId: product._id,
+      productName: product.name,
+      quantity,
+      customerName: user.displayName,
+      customerEmail: user.email,
+      phone: event.target.phone.value,
+      address: event.target.address.value
+    }
+    fetch('http://localhost:5000/order',{
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(order)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      toast('order successfully!')
+    })
   }
  
   return (
@@ -26,6 +53,7 @@ const Purchase = () => {
      <div className='flex justify-center items-center mt-5'>
      <div class="card w-96 bg-black shadow-xl">
       <div class="card-body items-center text-center">
+        
         <h2 class="card-title text-white">{product.name}</h2>
         <h2 className='text-white'>${product.price}</h2>
         <h2 className='text-white'>minimum order quantity: {product.minimum}</h2>
