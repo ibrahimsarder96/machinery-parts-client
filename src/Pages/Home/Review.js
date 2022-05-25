@@ -14,7 +14,7 @@ const Review = ({review}) => {
             </div>
           <div>
             <h1 className='text-black text-xl font-bold'>{review.name}</h1>
-            <h2 className='text-black'>{review.location}</h2>
+            <h2 className='text-black'>{review.rating}</h2>
           </div>
         </div>
           </div>

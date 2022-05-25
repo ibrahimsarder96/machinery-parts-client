@@ -10,16 +10,21 @@ import brand8 from '../../assets/brand/brand-8.png'
 
 const Brand = () => {
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-8'>
+<div className='text-center mb-36'>
+    <h1 className='text-2xl font-bold text-purple-500'>High quality brands from our assortment.</h1>
+    <h2 className='text-black text-xl'>Here we present you our carefully selected brands whose products you will find in our shop.</h2>
+    <div className='grid grid-cols-1 lg:grid-cols-6 mt-5'>
+     
        <img src={brand1} alt="" />
         <img src={brand2} alt="" />
         <img src={brand3} alt="" />
         <img src={brand4} alt="" />
-        <img src={brand5} alt="" />
-        <img src={brand6} alt="" />
+        {/* <img src={brand5} alt="" />
+        <img src={brand6} alt="" /> */}
         <img src={brand7} alt="" />
         <img src={brand8} alt="" />
     </div>
+</div>
   );
 };
 

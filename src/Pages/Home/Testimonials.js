@@ -10,22 +10,40 @@ const Testimonials = () => {
       _id: 1,
       name: 'Winson Herry',
       review: "Thank you to everybody involved with our unload yesterday. Another day at the office for A&A, but a day of huge significance to me.",
-      location: 'California',
-      img: people1
+      img: people1,
+      rating: <div class="rating">
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+</div>
     },
     {
       _id: 2,
       name: 'orna ',
       review: "We are very pleased with the job and look forward to working with A&A again. Everybody did a great job and I am pleased with A&A’s whole approach",
-      location: 'California',
-      img: people2
+      img: people2,
+      rating: <div class="rating">
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+</div>
     },
     {
       _id: 3,
       name: 'orni',
       review: "I wanted to let you know how pleased we were working with A&A. Your team is fantastic. Everyone we dealt with was professional and friendly. ",
-      location: 'California',
-      img: people3
+      img: people3,
+      rating: <div class="rating">
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+</div>
     },
   ]
   return (

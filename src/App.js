@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from './Pages/Shared/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home/Home';
-import About from './Pages/About/About';
+import MyProtfolio from './Pages/MyPortfolio/MyPortfolio';
 import Blogs from './Pages/Blogs/Blogs';
 import NotFound from './Pages/NotFound/NotFound';
 import Purchase from './Pages/Home/Purchase';
@@ -16,6 +16,7 @@ import MyOrder from './Pages/Dashboard/MyOrder';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Users from './Pages/Dashboard/Users';
+import RequireAdmin from './Pages/Login/RequireAdmin';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
      <Navbar></Navbar>
      <Routes>
       <Route path="/" element={<Home></Home>} />
-      <Route path="about" element={<About></About>} />
+      <Route path="portfolio" element={<MyProtfolio></MyProtfolio>} />
       <Route path="purchase/:productId" element={<RequireAuth>
         <Purchase></Purchase>
         </RequireAuth>} />
@@ -36,7 +37,7 @@ function App() {
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path='review' element={<AddReview></AddReview>}></Route>
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
-          <Route path='users' element={<Users></Users>}></Route>
+          <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
         </Route>
       <Route path="*" element={<NotFound></NotFound>} />
      </Routes>
