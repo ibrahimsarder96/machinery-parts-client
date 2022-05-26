@@ -34,7 +34,7 @@ const Purchase = () => {
       phone: event.target.phone.value,
       address: event.target.address.value
     }
-    fetch('http://localhost:5000/order',{
+    fetch('https://fast-scrubland-78671.herokuapp.com/order',{
       method: 'POST',
       headers: {
         'content-type': 'application/json'
