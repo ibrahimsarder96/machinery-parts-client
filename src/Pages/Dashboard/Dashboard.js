@@ -29,19 +29,11 @@ const Dashboard = () => {
         <li className='text-black'><Link to="/dashboard/review">Add A Review</Link></li>
         <li className='text-black'><Link to="/dashboard/profile">My Profile</Link></li>
         <li className='text-black'><Link to="/dashboard/addProduct">Add A Product</Link></li>
+        <li className='text-black'><Link to="/dashboard/manageProduct">Manage Product</Link></li>
        {admin && <>
         <li className='text-black'><Link to="/dashboard/users">Make Admin</Link></li>
         {/* <li className='text-black'><Link to="/dashboard/addProduct">Add A Product</Link></li> */}
        </>}
-                
- 
-        {/* {admin && 
-        <>
-        <li className='text-accent'><Link to="/dashboard/users">All Users</Link></li>
-        <li className='text-accent'><Link to="/dashboard/addDoctor">Add A Doctor</Link></li>
-        <li className='text-accent'><Link to="/dashboard/manageDoctor">Manage Doctor</Link></li>
-        </>
-        } */}
       </ul>
     
     </div>
