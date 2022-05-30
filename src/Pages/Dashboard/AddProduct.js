@@ -33,7 +33,7 @@ const AddProduct = () => {
             img: img
           }
           // send database----
-          fetch('http://localhost:5000/product', {
+          fetch('https://fast-scrubland-78671.herokuapp.com/product', {
             method: 'POST',
             headers: {
               'content-type': 'application/json',

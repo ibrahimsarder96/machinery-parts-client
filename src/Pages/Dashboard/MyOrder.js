@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 import { useQuery } from 'react-query';
@@ -11,18 +11,18 @@ import OrderRow from './OrderRow';
 
 const MyOrder = () => {
   // const [orders, setOrders] = useState([]);
+  const navigate = useNavigate();
   const [user] = useAuthState(auth) ;
-  // const navigate = useNavigate();
 
 
-  const {data: orders, isLoading, refetch} = useQuery('orders', () => fetch(`http://localhost:5000/order?customer=${user.email}`, {
+  const {data: orders, isLoading, refetch} = useQuery('orders', () => fetch(`https://fast-scrubland-78671.herokuapp.com/order?customer=${user.email}`, {
     headers: {
       authorization: `Bearer ${localStorage.getItem('accessToken')}`
     }
   })
   .then(res => {
           if(res.status === 401 || res.status === 403){
-            Navigate('/')
+            navigate('/')
             signOut(auth)
             localStorage.removeItem('accessToken');
           }
@@ -53,6 +53,7 @@ const MyOrder = () => {
       {
         orders.map((order, index) => <OrderRow
         order={order}
+        key={order._id}
         index={index}
         refetch={refetch}
         ></OrderRow> )

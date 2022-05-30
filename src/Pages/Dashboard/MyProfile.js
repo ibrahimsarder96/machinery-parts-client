@@ -33,7 +33,7 @@ const MyProfile = () => {
       phone: event.target.phone.value,
       linkedin: event.target.linkedin.value
     }
-    fetch('https://fast-scrubland-78671.herokuapp.com/order',{
+    fetch('https://fast-scrubland-78671.herokuapp.com/',{
       method: 'POST',
       headers: {
         'content-type': 'application/json'

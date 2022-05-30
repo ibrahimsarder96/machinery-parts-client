@@ -8,9 +8,10 @@ const MyPortfolio = () => {
       <h1 className='text-black text-xl'>Email: ibrahimsarder.me1@gmail.com</h1>
       <h1 className='text-black text-xl'>Education: Barisal Polytechnic Institute. Computer Science 7th Semester </h1>
       <h1 className='text-black text-xl'>Technologies or skills: html, css, bootstrap, tailwind,JavaScript, reactRoute, nodejs, express,mongodb, react</h1>
-      <a href=""></a>
-      <a href=""></a>
-      <a href=""></a>
+      <span><a className='text-primary mt-6' href="https://ibrahimsarder96.github.io/food-website/?fbclid=IwAR1FNNCRYoCi46riPexqAkwfttMgbo_YT9CkM1qAkqEvl-8-xqzbHqy2i18">Food Website</a></span>
+      <h1> <a className='text-primary' href="https://ibrahimsarder96.github.io/ecommerce-website/index.html">E-commerce Website</a></h1>
+      <h1 className='text-primary'> <a href="https://ibrahimsarder96.github.io/web-protfolio/?fbclid=IwAR1MwbaCarCI2cG0gXBFbS6ewuSLpb7w6LnIFfyjUVZz1g1p2ntzW85z-zc">portfolio</a></h1>
+
     </div>
   );
 };
